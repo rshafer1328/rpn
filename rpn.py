@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import operator
+from termcolor import colored
 
 
 operators = {
@@ -33,7 +34,10 @@ def uselessFunction() :
 def main():
     while True:
         result = calculate(input("rpn calc> "))
-        print("Result: ", result)
+        if (result < 0):
+            print(colored("Result:", 'red'), colored(result, 'red'))
+        else:
+            print("Result: ", result)
 
 if __name__ == '__main__':
     main()
